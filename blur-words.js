@@ -101,4 +101,18 @@ runWhenFontsReady(() => {
       }
     );
   });
+
+  // Recalculate trigger positions after all instances are created.
+  requestAnimationFrame(() => {
+    ScrollTrigger.refresh();
+  });
+
+  // Recalculate again when late-loading assets (images/video) settle layout.
+  window.addEventListener(
+    "load",
+    () => {
+      ScrollTrigger.refresh();
+    },
+    { once: true }
+  );
 });
