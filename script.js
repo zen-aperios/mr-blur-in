@@ -1,6 +1,9 @@
 (function initMrBlurIn(global) {
   function splitWords(el) {
-    if (!el || el.dataset.blurWordsReady === "1") return [];
+    if (!el) return [];
+    if (el.dataset.blurWordsReady === "1") {
+      return Array.from(el.querySelectorAll(".blur-word"));
+    }
 
     const text = el.textContent.trim();
     if (!text) return [];
@@ -85,8 +88,8 @@
       gsap.registerPlugin(ScrollTrigger);
     }
 
-    document.querySelectorAll(".js-blur-words").forEach((el) => animateLoad(gsap, el));
     document.querySelectorAll(".blur-in").forEach((el) => animateOnScroll(gsap, ScrollTrigger, el));
+    document.querySelectorAll(".js-blur-words:not(.blur-in)").forEach((el) => animateLoad(gsap, el));
   }
 
   global.MrBlurIn = {
