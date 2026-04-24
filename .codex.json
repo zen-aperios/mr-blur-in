@@ -1,0 +1,13 @@
+{
+  "title": "Blur",
+  "libraries": [
+    {
+      "name": "GSAP",
+      "url": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"
+    },
+    {
+      "name": "ScrollTrigger",
+      "url": "https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"
+    }
+  ]
+}
