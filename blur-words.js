@@ -1,4 +1,22 @@
-document.addEventListener("DOMContentLoaded", () => {
+function runWhenFontsReady(callback) {
+  const start = () => {
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready
+        .then(() => requestAnimationFrame(callback))
+        .catch(() => requestAnimationFrame(callback));
+      return;
+    }
+    requestAnimationFrame(callback);
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", start, { once: true });
+  } else {
+    start();
+  }
+}
+
+runWhenFontsReady(() => {
   document.querySelectorAll(".js-blur-words").forEach((el) => {
     const words = el.textContent.trim().split(/\s+/);
 
@@ -38,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-document.addEventListener("DOMContentLoaded", () => {
+runWhenFontsReady(() => {
   gsap.registerPlugin(ScrollTrigger);
 
   document.querySelectorAll(".blur-in").forEach((el) => {
