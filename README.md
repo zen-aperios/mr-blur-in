@@ -2,6 +2,10 @@
 
 Reusable blur-word animation utility for Webflow (and any HTML project).
 
+## Full Guide
+
+- [How To Use In Webflow](./HOW_TO_WEBFLOW.md)
+
 ## Classes
 
 - `.js-blur-words`: runs once on page load.
@@ -11,6 +15,8 @@ Reusable blur-word animation utility for Webflow (and any HTML project).
 
 - `blur-words.css`: minimal class styles for production use.
 - `blur-words.js`: animation logic (same as `script.js`).
+- `blur-words.min.css`: minified production CSS.
+- `blur-words.min.js`: minified production JS.
 
 ## Webflow Setup
 
@@ -24,8 +30,8 @@ Reusable blur-word animation utility for Webflow (and any HTML project).
 2. After this repo is pushed to GitHub, reference the files:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/<your-github-user>/mr-blur-in@main/blur-words.css" />
-<script src="https://cdn.jsdelivr.net/gh/<your-github-user>/mr-blur-in@main/blur-words.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/<your-github-user>/mr-blur-in@main/blur-words.min.css" />
+<script src="https://cdn.jsdelivr.net/gh/<your-github-user>/mr-blur-in@main/blur-words.min.js"></script>
 ```
 
 3. In the Webflow Designer, apply classes to any text element:
